@@ -89,7 +89,7 @@ main {padding:15px}
 .nav-item.active {
   background:var(--card2);
   color:var(--gold);
-}
+      }
     .auth-card {
   background:var(--card);
   border:1px solid var(--border);
@@ -211,7 +211,7 @@ main {padding:15px}
   display:block;
   font-size:24px;
   color:var(--gold);
-}
+      }
     .dua-card {
   background:var(--card);
   border:1px solid var(--border);
@@ -371,8 +371,8 @@ footer {
 import { createClient } from
 'https://esm.sh/@supabase/supabase-js@2';
 
-https://xcbezhomtqnwrbhonwgu.supabase.co
-const SUPABASE_KEY = sb_publishable_cla-OecF7u1pa30Rf5M9gg_LQQ_7ERR;
+const SUPABASE_URL = 'YOUR_SUPABASE_URL';
+const SUPABASE_KEY = 'YOUR_SUPABASE_PUBLISHABLE_KEY';
 
 const configured =
   SUPABASE_URL.startsWith('https://') &&
@@ -453,7 +453,7 @@ function events() {
 function todayEvents() {
   return events().filter(e=>e.date===today());
 }
-    async function registerUser() {
+async function registerUser() {
   if(!db) {
     toast('প্রথমে Supabase Configuration করুন।');
     return;
@@ -788,7 +788,7 @@ window.addEventListener('offline',()=>{
 
   $('goingBtn').onclick=markGoing;
   $('returningBtn').onclick=markReturning;
-        }
+    }
     const DUAS=[
  {
   title:'ঘুমানোর দোয়া',
@@ -866,7 +866,7 @@ function showDuaForAction(type) {
     addAttendance(type);
   }
     }
-    function renderDashboard() {
+   function renderDashboard() {
   const s=getSummary();
 
   const completed=[
@@ -1066,7 +1066,7 @@ function renderSearch() {
 
   $('searchButton').onclick=searchUser;
     }
-    function renderReports() {
+   function renderReports() {
   const box=$('reportsContent');
 
   box.innerHTML=`
@@ -1186,7 +1186,7 @@ function exportBackup() {
   URL.revokeObjectURL(url);
   toast('Backup তৈরি হয়েছে।');
     }
-     function renderCalendar() {
+    function renderCalendar() {
   const box=$('reportsContent');
 
   const year=new Date().getFullYear();
@@ -1314,7 +1314,7 @@ async function savePrivacy() {
     toast(e.message);
   }
     }
-    function showPage(page) {
+   function showPage(page) {
   currentPage=page;
 
   document.querySelectorAll('.page').forEach(el=>{
@@ -1414,7 +1414,7 @@ $('showLogin').onclick=()=>{
 
 $('registerButton').onclick=registerUser;
 $('loginButton').onclick=loginUser;
-     async function initializeApp() {
+   async function initializeApp() {
   $('todayDate').textContent=
     new Date().toLocaleDateString('bn-BD',{
       dateStyle:'full'
@@ -1432,4 +1432,4 @@ initializeApp();
 </script>
 
 </body>
-</html>
+</html> 
